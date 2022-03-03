@@ -1,6 +1,6 @@
 @extends('cms.parent')
 
-@section('taitle','Dashboard')
+@section('taitle',__('cms.dashboard'))
 
 @section('main-content')
 
