@@ -90,6 +90,21 @@ class SpecialtyController extends Controller
     public function update(Request $request, Specialty $specialty)
     {
         //
+        $request->validate([
+            'name_en' => 'required|string|min:3 |max:50',
+            'name_ar' => 'required|string|min:3 |max:50',
+            'active' => 'nullable|string|in:on',
+        ]);
+        $specialty->name_en = $request->input('name_en');
+        $specialty->name_ar = $request->input('name_ar');
+        $specialty->active = $request->has('active');
+        $isUpdated = $specialty->save();
+        if ($isUpdated) {
+            // session()->flash('message', __('messages.update_success'));
+            return redirect()->route('specialties.index');
+        } else {
+            return redirect()->back();
+        }
     }
 
     /**
@@ -101,5 +116,7 @@ class SpecialtyController extends Controller
     public function destroy(Specialty $specialty)
     {
         //
+        $deleted = $specialty->delete();
+        return redirect()->back();
     }
 }

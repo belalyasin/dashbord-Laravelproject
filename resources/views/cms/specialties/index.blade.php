@@ -45,12 +45,16 @@
                     <td>{{$specialty->updated_at}}</td>
                     <td>
                         <div class="btn-group">
-                            <a href="{{route('specialties.edit'),[$specialty->id]}}" class="btn btn-warning">
-                              <i class="fas fa-edit"></i>
+                            <a href="{{route('specialties.edit',[$specialty->id])}}" class="btn btn-warning">
+                                <i class="fas fa-edit"></i>
                             </a>
-                            <button type="button" class="btn btn-danger">
+                            <form method="POST" action="{{route('specialties.destroy',[$specialty->id])}}">
+                                @csrf
+                                @method('DELETE')
+                            <button type="submit" class="btn btn-danger">
                               <i class="fas fa-trash"></i>
                             </button>
+                            </form>
                           </div>
                     </td>
                   </tr>

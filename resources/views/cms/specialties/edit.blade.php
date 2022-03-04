@@ -1,9 +1,9 @@
 @extends('cms.parent')
 
-@section('title',__('cms.create_specialty'))
-@section('page_name',__('cms.create'))
+@section('title',__('cms.edit_specialty'))
+@section('page_name',__('cms.edit'))
 @section('main_page',__('cms.specialities'))
-@section('small_page_name',__('cms.create'))
+@section('small_page_name',__('cms.edit'))
 
 @section('style')
 
@@ -26,6 +26,7 @@
                         <!-- form start -->
                         <form method="POST" action="{{route('specialties.update',[$specialty->id])}}">
                             @csrf
+                            @method('PUT')
                             <div class="card-body">
                                 @if($errors->any())
                                     <div class="alert alert-danger alert-dismissible">
@@ -55,7 +56,7 @@
                                 </div>
                                 <div class="form-group">
                                     <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success">
-                                        <input type="checkbox" class="custom-control-input" id="activecheckbox" value="{{old('active') ?? $specialty->active}}" name="active">
+                                        <input type="checkbox" class="custom-control-input" id="activecheckbox"  name="active" @if($specialty->active) checked @endif>
                                         <label class="custom-control-label" for="activecheckbox">{{__('cms.active')}}</label>
                                     </div>
                                 </div>
