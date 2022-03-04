@@ -12,10 +12,12 @@ return [
     "created_at" => "Created At",
     "updated_at" => "Updated At",
     "settings" => "Settings",
-    "create_specialty"=>"Create Specialty",
-    "update_specialty"=>"Update Specialty",
-    "save"=>"Save",
-    "success"=>"Success",
+    "create_specialty" => "Create Specialty",
+    "update_specialty" => "Update Specialty",
+    "save" => "Save",
+    "success" => "Success",
+    "edit" => "Edit",
+    "edit_specialty" => "Edit Specialty",
 
 
 ];

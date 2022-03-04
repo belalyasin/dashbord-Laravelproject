@@ -45,9 +45,9 @@
                     <td>{{$specialty->updated_at}}</td>
                     <td>
                         <div class="btn-group">
-                            <button type="button" class="btn btn-warning">
+                            <a href="{{route('specialties.edit'),[$specialty->id]}}" class="btn btn-warning">
                               <i class="fas fa-edit"></i>
-                            </button>
+                            </a>
                             <button type="button" class="btn btn-danger">
                               <i class="fas fa-trash"></i>
                             </button>

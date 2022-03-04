@@ -39,20 +39,20 @@ class SpecialtyController extends Controller
     {
         //
         $request->validate([
-            'name_en'=>'required|string|min:3 |max:50',
-            'name_ar'=>'required|string|min:3 |max:50',
-            'active'=>'nullable|string|in:on'
+            'name_en' => 'required|string|min:3 |max:50',
+            'name_ar' => 'required|string|min:3 |max:50',
+            'active' => 'nullable|string|in:on'
         ]);
         $specialty = new Specialty();
         $specialty->name_en = $request->input('name_en');
         $specialty->name_ar = $request->input('name_ar');
         $specialty->active = $request->has('active');
         $isSaved = $specialty->save();
-        if ($isSaved){
+        if ($isSaved) {
             session()->flash('message', __('messages.creat_success'));
             return redirect()->back();
-//            return redirect()->route('specialties.index');
-        }else{
+            //            return redirect()->route('specialties.index');
+        } else {
             return redirect()->back();
         }
     }
@@ -77,6 +77,7 @@ class SpecialtyController extends Controller
     public function edit(Specialty $specialty)
     {
         //
+        return response()->view('cms.specialties.edit', ['specialty' => $specialty]);
     }
 
     /**
