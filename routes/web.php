@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\SpecialtyController;
+use App\Models\Specialty;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,4 +17,5 @@ use Illuminate\Support\Facades\Route;
 
 Route::prefix('cms/admin')->group(function () {
     Route::view('/', 'cms.dashboard');
+    Route::resource('specialties', SpecialtyController::class);
 });

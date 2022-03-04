@@ -15,6 +15,9 @@ class SpecialtyFactory extends Factory
     {
         return [
             //
+            'name_en'=>$this->faker->jobTitle,
+            'name_ar'=>$this->faker->jobTitle,
+            'active'=>$this->faker->boolean(50),
         ];
     }
 }

@@ -1,8 +1,8 @@
 @extends('cms.parent')
 
-@section('taitle',__('cms.dashboard'))
+@section('title',__('cms.dashboard'))
 
-@section('main-content')
+@section('main_content')
 
 <div class="content">
     <div class="container-fluid">
