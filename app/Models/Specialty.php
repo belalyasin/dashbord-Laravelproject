@@ -11,6 +11,10 @@ class Specialty extends Model
 {
     use HasFactory;
 
+    public function users(){
+        return $this->hasMany(User::class,'specialty_id','id');
+    }
+
 
     public function getActiveStatusAttribute(){
         return $this->active == 1 ? 'Active' : 'InActive';

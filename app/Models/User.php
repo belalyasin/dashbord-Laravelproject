@@ -12,6 +12,10 @@ class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
+
+    public function specialty(){
+        return $this->belongsTo(Specialty::class,'specialty_id','id');
+    }
     /**
      * The attributes that are mass assignable.
      *
