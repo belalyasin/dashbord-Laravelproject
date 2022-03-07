@@ -11,12 +11,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <title>{{__('cms.app_name')}} | @yield('title')</title>
 
     <!-- Google Font: Source Sans Pro -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="{{asset('cms/plugins/fontawesome-free/css/all.min.css')}}">
     <!-- Theme style -->
     <link rel="stylesheet" href="{{asset('cms/dist/css/adminlte.min.css')}}">
-
+    <!-- Toastr -->
+    <link rel="stylesheet" href="{{asset('cms/plugins/toastr/toastr.min.css')}}">
     @yield('style')
 
 </head>
@@ -231,6 +233,30 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 </li>
                             </ul>
                         </li>
+                        <li class="nav-header">{{__('cms.human_resources')}}</li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fas fa-circle"></i>
+                                <p>
+                                    {{__('cms.users')}}
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="{{route('users.index')}}" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>{{__('cms.index')}}</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{route('users.create')}}" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>{{__('cms.create')}}</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
                         <li class="nav-header">{{__('cms.content_management')}}</li>
                         <li class="nav-item">
                             <a href="#" class="nav-link">
@@ -254,6 +280,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                     </a>
                                 </li>
                             </ul>
+                        </li>
                 </nav>
                 <!-- /.sidebar-menu -->
             </div>
@@ -317,6 +344,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <script src="{{asset('cms/plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
     <!-- AdminLTE App -->
     <script src="{{asset('cms/dist/js/adminlte.min.js')}}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="{{asset('cms/plugins/toastr/toastr.min.js')}}"></script>
     @yield('scripts')
 </body>
 

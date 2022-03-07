@@ -16,6 +16,10 @@ class User extends Authenticatable
     public function specialty(){
         return $this->belongsTo(Specialty::class,'specialty_id','id');
     }
+
+    public function getGenderTypeAttribute(){
+        return $this->gender == 'M' ? 'Male' : 'Fmale';
+    }
     /**
      * The attributes that are mass assignable.
      *

@@ -18,6 +18,17 @@ return [
     "success" => "Success",
     "edit" => "Edit",
     "edit_specialty" => "Edit Specialty",
+    "human_resources" => "Human Resources",
+    "users"=>"Users",
+    "create_user"=>"Create User",
+    "update_user"=>"Update User",
+    "name"=>"Name",
+    "email"=>"Email",
+    "gender"=>"Gender",
+    "male"=>"Male",
+    "fmale"=>"Fmale",
+    "password"=>"Password",
+    "specialty"=>"Specialty",
 
 
 ];
