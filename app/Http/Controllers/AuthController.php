@@ -16,7 +16,7 @@ class AuthController extends Controller
     }
     public function login(Request $request)
     {
-        $validator = Validator($request->all(),[
+        $validator = Validator([
             'email' => 'required|email|exists:admins,email',
             'password' => 'required|string|min:3',
             'remember' => 'required|boolean',
