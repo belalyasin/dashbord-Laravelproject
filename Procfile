@@ -1,1 +1,1 @@
-web: vendor/bin/heroku-php-apache2 resources/views/cms/dashboard
+web: vendor/bin/heroku-php-apache2 public/
