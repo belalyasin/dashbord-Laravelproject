@@ -105,7 +105,7 @@
             .then(function (response) {
                 console.log(response);
                 // toastr.success(response.data.message);
-                window.location.href = 'cms/admin/users'
+                window.location.href = '/cms/admin/'
             })
             .catch(function (error) {
                 console.log(error);
