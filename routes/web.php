@@ -3,6 +3,7 @@
 use App\Http\Controllers\SpecialtyController;
 use App\Http\Controllers\UserController;
 use App\Models\Specialty;
+use GuzzleHttp\Middleware;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,8 +17,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::prefix('cms/admin')->group(function () {
+Route::prefix('cms/admin')->group(function(){
+    Route::view('/login', 'cms.auth.login')->name('auth.login');
+});
+
+Route::prefix('cms/admin')->middleware('auth:web,admin')->group(function () {
     Route::view('/', 'cms.dashboard');
     Route::resource('specialties', SpecialtyController::class);
     Route::resource('users', UserController::class);
 });
+
+
