@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\SpecialtyController;
 use App\Http\Controllers\UserController;
@@ -18,13 +19,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::prefix('cms/admin')->middleware('guest:web,admin')->group(function () {
-    Route::get('/login', [AuthController::class, 'showLoginView'])->name('auth.login');
-    Route::post('/login', [AuthController::class, 'login'])->name('auth.login');
+Route::prefix('cms')->middleware('guest:user,admin')->group(function () {
+    Route::get('/{guard}/login', [AuthController::class, 'showLoginView'])->name('auth.login');
+    Route::post('/login', [AuthController::class, 'login']);
 });
 
-Route::prefix('cms/admin')->middleware('auth:web,admin')->group(function () {
+Route::prefix('cms/admin')->middleware('auth:user,admin')->group(function () {
     Route::view('/', 'cms.dashboard');
     Route::resource('specialties', SpecialtyController::class);
     Route::resource('users', UserController::class);
+    Route::resource('admins', AdminController::class);
+    Route::get('logout',[AuthController::class,'logout'])->name('auth.logout');
 });

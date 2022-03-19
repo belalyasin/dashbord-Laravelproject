@@ -97,7 +97,7 @@
     <script>
         function performStore(){
         // alert('Perform Store Function');
-            axios.post('/cms/admin/login', {
+            axios.post('/cms/login', {
                 email: document.getElementById('email').value,
                 password: document.getElementById('password').value,
                 remember: document.getElementById('remember').checked,

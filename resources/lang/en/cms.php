@@ -29,6 +29,10 @@ return [
     "fmale"=>"Fmale",
     "password"=>"Password",
     "specialty"=>"Specialty",
+    "logout"=>"Logout",
+    "admins"=>"Admins",
+    "create_admin"=>"Create Admin",
+    "update_admin"=>"Update Admin",
 
 
 ];

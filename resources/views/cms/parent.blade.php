@@ -187,7 +187,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             alt="User Image">
                     </div>
                     <div class="info">
-                        <a href="#" class="d-block">Alexander Pierce</a>
+                        <a href="#" class="d-block">{{auth()->user()->name}}</a>
                     </div>
                 </div>
 
@@ -238,6 +238,29 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             <a href="#" class="nav-link">
                                 <i class="nav-icon fas fa-circle"></i>
                                 <p>
+                                    {{__('cms.admins')}}
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="{{route('admins.index')}}" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>{{__('cms.index')}}</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{route('admins.create')}}" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>{{__('cms.create')}}</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fas fa-circle"></i>
+                                <p>
                                     {{__('cms.users')}}
                                     <i class="right fas fa-angle-left"></i>
                                 </p>
@@ -281,7 +304,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 </li>
                             </ul>
                         </li>
-                </nav>
+                        <li class="nav-header">{{__('cms.settings')}}</li>
+                        <li class="nav-item">
+                            <a href="{{route('auth.logout')}}" class="nav-link">
+                              <i class="nav-icon far fa-circle text-danger"></i>
+                              <p class="text">{{__('cms.logout')}}</p>
+                            </a>
+                          </li>
+                    </nav>
                 <!-- /.sidebar-menu -->
             </div>
             <!-- /.sidebar -->
